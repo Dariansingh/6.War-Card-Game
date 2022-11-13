@@ -1,15 +1,15 @@
 var expect = chai.expect;
 
-decscribe('MyFunctions', function(){
-    describe('#doSomething', function(){
-        it('should return arrays flattened into one array', function() {
-            var array = newDeck([1, 2], [3, 4]);
-            expect(array).to.equal([1, 2, 3, 4])
+describe('MyFunctions', function() {
+    describe('#averageOfArray', function() {
+        it('should return sum of numbers in array', function() {
+            var arraySum = averageOfArray([1, 2, 3, 4]);
+            expect(arraySum).to.equal(10)
         })
 
-        it('should throw an error if parameter is not an array', function() {
+        it('should throw an error if parameter is not a number', function() {
             expect(function() {
-                newDeck('string');
+                averageOfArray('string');
             }).to.throw(Error);
         })
     })

@@ -65,16 +65,11 @@ class Card {
 
 //returns array of arrays but it flattened into one array
 function newDeck() {
-    if (typeof SUITS != Array) {
-        throw new Error('SUITS must be an array')
-    }
-
     return SUITS.flatMap(suit => {  
         return VALUES.map(value => {
             return new Card(suit, value)
         })
     })
-        
 }
 
 const deck = new Deck();
@@ -108,10 +103,13 @@ for (let i = 0; i < 26; i++) {
 }
 
 //adds each individual players points
-function averageOfArray(array1) {
-    playerSum = array1.reduce((previousValue, currentValue) => {
+function averageOfArray(array) {
+    playerSum = array.reduce((previousValue, currentValue) => {
         return previousValue + currentValue
-    })
+
+    }); if(typeof array === Number) {
+        throw new Error('array must be a number')
+    }
     return playerSum;
 }
 
